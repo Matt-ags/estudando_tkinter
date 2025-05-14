@@ -111,8 +111,8 @@ def mostra_resultado():
         # rolling_average = st.toggle("Rolling average")
 
         data = pd.DataFrame({
-            "Candidatos": all_users,
-            "Votos": [c["votos"] for c in st.session_state.candidatos]
+            "Candidatos": users,
+            "Votos": [c["votos"] for c in st.session_state.candidatos if c["nome"] in users]
         })
 
         tab1, tab2 = st.tabs(["Grafico de Barras", "Tabela"])
